@@ -26,7 +26,7 @@ class AppWidgetPinnedReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         Toast.makeText(
             context,
-            "Widget pinned. Go to homescreen.",
+            R.string.app_widget_pinned_receiver_goto_launcher,
             Toast.LENGTH_SHORT
         ).show()
     }

@@ -33,7 +33,7 @@ object WeatherRepo {
             delay(delay)
         }
         return WeatherInfo.Available(
-            placeName = "Tokyo",
+            placeName = "Tokyo2",
             currentData = getRandomWeatherData(Instant.now()),
             hourlyForecast = (1..4).map {
                 getRandomWeatherData(Instant.now().plusSeconds(it * 3600L))
