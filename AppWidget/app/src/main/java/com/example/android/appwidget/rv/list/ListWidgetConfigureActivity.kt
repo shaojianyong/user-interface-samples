@@ -25,6 +25,7 @@ import com.example.android.appwidget.R
 import com.example.android.appwidget.databinding.ActivityWidgetConfigureBinding
 
 /**
+ * TODO-List微件设置页面：在购物清单和待办事项之间切换
  * The configuration screen for the [ListAppWidget] widget.
  */
 class ListWidgetConfigureActivity : AppCompatActivity() {

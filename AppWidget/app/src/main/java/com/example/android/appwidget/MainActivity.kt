@@ -108,7 +108,7 @@ private fun AppWidgetProviderInfo.pin(context: Context) {
     val successCallback = PendingIntent.getBroadcast(
         context,
         0,
-        Intent(context, AppWidgetPinnedReceiver::class.java),
+        Intent(context, AppWidgetPinnedReceiver::class.java),  // 显式指定目标组件
         PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
     )
     // 将微件固定在桌面上

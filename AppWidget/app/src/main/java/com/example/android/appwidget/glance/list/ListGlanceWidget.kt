@@ -111,7 +111,7 @@ private fun CountChecked() {
     }.size
 
     Text(
-        text = "$checkedCount checkboxes checked",
+        text = "已选中 $checkedCount 个项目",
         modifier = GlanceModifier.padding(start = 8.dp),
         style = TextStyle(
             color = GlanceTheme.colors.textColorSecondary

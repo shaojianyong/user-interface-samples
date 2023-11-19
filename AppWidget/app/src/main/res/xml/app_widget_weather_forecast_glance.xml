@@ -14,7 +14,7 @@
   ~ limitations under the License.
   -->
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
-    android:description="@string/app_widget_weather_description"
+    android:description="@string/glance_widget_weather_description"
     android:initialLayout="@layout/widget_loading"
     android:minWidth="184dp"
     android:minHeight="184dp"

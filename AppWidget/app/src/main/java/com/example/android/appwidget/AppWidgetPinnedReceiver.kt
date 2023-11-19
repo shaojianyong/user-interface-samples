@@ -21,6 +21,9 @@ import android.content.Context
 import android.content.Intent
 import android.widget.Toast
 
+/**
+ * 桌面放置回调
+ */
 class AppWidgetPinnedReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {

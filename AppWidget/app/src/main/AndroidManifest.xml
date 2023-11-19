@@ -32,6 +32,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppWidget">
 
+        <!-- 微件演示App主界面 -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -41,10 +42,7 @@
             </intent-filter>
         </activity>
 
-        <receiver
-            android:name=".AppWidgetPinnedReceiver"
-            android:exported="false" />
-
+        <!-- 清单类型选择界面，可以改造为万象小组件切换界面 -->
         <activity
             android:name=".rv.list.ListWidgetConfigureActivity"
             android:exported="false">
@@ -53,8 +51,15 @@
             </intent-filter>
         </activity>
 
+        <!-- 微件放置回调，Intent显式指定接收组件 -->
+        <receiver
+            android:name=".AppWidgetPinnedReceiver"
+            android:exported="false" />
+
+        <!-- 待办清单：清单类型选择界面，可以改造为万象小组件切换界面 -->
         <receiver
             android:name=".rv.list.ListAppWidget"
+            android:label="@string/grocery_list"
             android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -64,30 +69,11 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/app_widget_list_rv" />
         </receiver>
-        <receiver
-            android:name=".rv.buttons.ButtonsAppWidget"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
 
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/app_widget_buttons_rv" />
-        </receiver>
-        <receiver
-            android:name=".rv.weather.WeatherForecastAppWidget"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/app_widget_weather_forecast" />
-        </receiver>
+        <!-- 待办清单Glance版本 -->
         <receiver
             android:name=".glance.list.ListGlanceWidgetReceiver"
+            android:label="@string/glance_todo_list"
             android:enabled="@bool/glance_appwidget_available"
             android:exported="false">
             <intent-filter>
@@ -98,6 +84,51 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/app_widget_list_glance" />
         </receiver>
+
+        <!-- 按钮演示微件 -->
+        <receiver
+            android:name=".rv.buttons.ButtonsAppWidget"
+            android:label="@string/buttons_title"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/app_widget_buttons_rv" />
+        </receiver>
+
+        <!-- 按钮演示Glance版本 -->
+        <receiver
+            android:name=".glance.buttons.ButtonsGlanceWidgetReceiver"
+            android:label="@string/buttons_glance_title"
+            android:enabled="@bool/glance_appwidget_available"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/app_widget_buttons_glance" />
+        </receiver>
+
+        <!-- 天气微件 -->
+        <receiver
+            android:name=".rv.weather.WeatherForecastAppWidget"
+            android:label="@string/weather"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/app_widget_weather_forecast" />
+        </receiver>
+
+        <!-- 天气Glance版本 -->
         <receiver
             android:name=".glance.weather.WeatherGlanceWidgetReceiver"
             android:label="@string/glance_weather"
@@ -111,23 +142,13 @@
                 android:name="android.appwidget.provider"
                 android:resource="@xml/app_widget_weather_forecast_glance" />
         </receiver>
-        <receiver
-            android:name=".glance.buttons.ButtonsGlanceWidgetReceiver"
-            android:enabled="@bool/glance_appwidget_available"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
 
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/app_widget_buttons_glance" />
-        </receiver>
+        <!-- 相册 -->
         <receiver
             android:name=".glance.image.ImageGlanceWidgetReceiver"
+            android:label="@string/images"
             android:enabled="@bool/glance_appwidget_available"
-            android:exported="false"
-            android:label="@string/images">
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
             </intent-filter>

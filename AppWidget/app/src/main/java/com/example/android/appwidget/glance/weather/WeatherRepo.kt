@@ -16,6 +16,8 @@
 
 package com.example.android.appwidget.glance.weather
 
+import androidx.compose.ui.res.stringResource
+import androidx.glance.LocalContext
 import com.example.android.appwidget.R
 import kotlinx.coroutines.delay
 import java.time.Instant
@@ -33,7 +35,7 @@ object WeatherRepo {
             delay(delay)
         }
         return WeatherInfo.Available(
-            placeName = "Tokyo2",
+            placeName = "北京",
             currentData = getRandomWeatherData(Instant.now()),
             hourlyForecast = (1..4).map {
                 getRandomWeatherData(Instant.now().plusSeconds(it * 3600L))
