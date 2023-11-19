@@ -16,8 +16,8 @@
 <resources>
     <string name="app_name">微件</string>
     <string name="placeholder_main_activity_pin">放置一个微件:</string>
-    <string name="placeholder_main_activity_pin_unavailable">不支持放置在默认桌面上</string>
-    <string name="placeholder_main_activity">微件演示程序：AppWidget 选取列表。\n点击下面的 AppWidget 将它们固定在桌面上：</string>
+    <string name="placeholder_main_activity_pin_unavailable">这个微件不支持放置在默认桌面上</string>
+    <string name="placeholder_main_activity">万象小组件演示：微件选取列表。\n点击下面的微件，将它们固定在桌面上：</string>
     <string name="grocery_list">购物清单</string>
     <string name="add_button_grocery_list_content_description">添加购物清单按钮</string>
     <string name="app_widget_grocery_list_description">购物待办事项列表</string>
